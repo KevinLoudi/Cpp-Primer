@@ -13,8 +13,11 @@
 
 #include <fstream>
 #include <iostream>
-
 #include "../ch07/ex7_26.h"
+
+std::istream &read(std::istream &is, Sales_data &item);
+
+
 using std::ifstream; using std::cout; using std::endl; using std::cerr;
 
 int main(int argc, char **argv)

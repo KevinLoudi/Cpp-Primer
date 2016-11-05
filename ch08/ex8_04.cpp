@@ -16,10 +16,12 @@ using std::vector; using std::string; using std::ifstream; using std::cout; usin
 
 void ReadFileToVec(const string& fileName, vector<string>& vec)
 {
+	
     ifstream ifs(fileName);
     if (ifs)
     {
         string buf;
+        //stop untill delimiter found
         while (std::getline(ifs, buf))
             vec.push_back(buf);
     }
@@ -29,7 +31,11 @@ int main()
 {
     vector<string> vec;
     ReadFileToVec("../data/book.txt", vec);
-    for (const auto &str : vec)
+
+    for (const auto &str:vec)
         cout << str << endl;
+    //equivalent to following
+    for(int i=0;i<vec.size();++i)
+    	cout << vec[i]<<endl;
     return 0;
 }
